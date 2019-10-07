@@ -1,0 +1,138 @@
+@title Dragon Game
+
+@set rank = s1
+@set prestige = 0
+@set armorlevel = 0
+@set armor = no armor
+@set weaponlevel = 0
+@set weapon = no weapon
+@set joe_weapon = nothing
+
+I stepped out of my house still groggy with sleep. Then I [heard something].
+
+[heard something]:
+"A dragon!" the village guard shouted. "It's on its way!"
+
+Villagers ran in random directions. Other soldiers directed people to evacuate to the nearby town or the Lord's castle.
+
+You look into the sky and see a smoky speck in the distance.
+
+An [officer approaches].
+
+[officer approaches]:
+"Get to the armory!" the officer said. "Get ready for battle! Now's the time to show your squire training."
+
+You turn to your brother, Joe. "What should we do? Evacuate to the [[nearby town]](nearby town no weapons), head the [[Lord's castle]], or head the [[armory]]?"
+
+[[nearby town no weapons]]:
+@clear
+
+"My girlfriend Frieda is in that town!" he says. "We have to save her!"
+
+(we head off to the town)
+
+(arrive at the town)
+
+(search different buildings for the girl)
+
+(dragon arrives, you fight and die)
+
+[[nearby town with weapons]]:
+@clear
+you arrive heavily armed
+
+[[Lord's castle]]:
+@clear
+
+(hop on a horse)
+
+(ride among the crowds of peasants)
+
+(some on foot, some in wagons, some on horses of their own)
+
+(maybe offer your horse to someone else, in a way that helps the story later, gaining prestige)
+
+(maybe lead the peasants toward the castle, gaining prestige)
+
+(maybe steal from the peasants, losing prestige)
+
+After an hour, you arrive at the Lord's castle.
+
+As you arrive at the gates, you hear the dragon's roar closely behind you.
+
+[[armory]]:
+@clear
+
+You run towards the stone building to your left, constructed of large boulders and trunks of trees. Wrenching open the heavy wooden door, you enter.
+
+To your left, you see racks of practice swords. Beyond those, a few metal swords left by the other guards.
+
+To your right, you see several empty armor stands. At the end of the row is one incomplete set of rusty plate armor. On the floor behind the stands are several pieces of leather armor.
+
+"What should we do?" Joe says. "That dragon will be here any minute, and my girlfriend Frieda is alone in the town!"
+
+Do you take a [wooden practice sword](wooden_sword), a [metal sword](metal_sword), the [rusty metal armor](metal_armor), or some [leather armor](leather_armor).
+
+[metal_sword]:
+@set weaponlevel = 2
+@set weapon = metal sword
+@set joe_weapon = wooden sword
+{if seen wooden_sword:You drop the wooden sword and}{else:You} heft the metal sword with both hands. It feels well balanced, but still takes some effort to buckle to your waist. wooden_sword
+
+{if seen wooden_sword:Joe drops his metal sword and picks up the wooden sword you dropped.}{else:Joe picks up a wooden sword.}
+
+[wooden_sword]:
+@set weaponlevel = 1
+@set weapon = wooden sword
+@set joe_weapon = metal sword
+{if seen metal_sword:You drop the metal sword and}{else:You} reach for a wooden sword. The grip is familiar in your hands since you've practiced with it daily for the past 2 years.
+
+{if seen metal_sword:Joe drops his wooden sword and picks up a metal sword.}{else:Joe picks up a metal sword.}
+
+
+[metal_armor]:
+@set armorlevel = 2
+@set armor = metal armor
+You wriggle into the metal armor with some help from Joe. 
+(tough to walk around)
+
+[leather_armor]:
+@set armorlevel = 1
+@set armor = leather armor
+You each slip on a breastplate of leather armor.
+
+[@1]:
+(dragon gets closer)
+(or, Joe looks out the window and sees the speck growing larger in the sky)
+
+[@2]:
+(dragon even closer)
+(Joe looks out the window and sees wings)
+
+[@3]:
+@clear
+(heavy sound as the dragon lands)
+
+"How do I look?" you say to Joe, brandshing your {weapon} and standing with {armor}.
+
+"The dragon is here!" Joe screams. "Are you going to [[fight him in that]](fight_dragon)?"
+
+You see a [pile of torches](floor_torch) in the corner, and another [mounted in a bracket on the wall](wall_torch).
+
+(mention the rug)
+
+[floor_torch]:
+You grab a torch from the pile on the floor.
+
+[wall_torch]:
+You pull at the torch in the bracket, but it merely hinges away. Behind you, [[Joe lets out a scream]](trap_door).
+
+
+[[fight_dragon]]:
+@clear
+You rush out and approach the dragon with your {weapon} and in your {armor}.
+
+[[trap_door]]:
+@clear
+You turn just in time to see Joe's head disappear into a trap door in the floor.
+

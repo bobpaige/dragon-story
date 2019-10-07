@@ -1,0 +1,4 @@
+#!/bin/bash
+
+squiffy *.squiffy
+mv *.html *.css *.js output
